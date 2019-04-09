@@ -1,0 +1,16 @@
+1、数组去重
+（1）var arr = [1,1,2,2,3,4] , newArr = [];
+         arr.forEach(item => {
+             if(newArr.indexOf(item) === -1){
+                 newArr.push(item);
+             }
+         });
+（2）var array = [1,1,2,2,3,4];
+         array = array.filter((item,index,arr) => {
+           return arr.indexOf(item) === index;
+         });
+（3）var array = [1,1,2,2,3,4];
+         array = array.reduce((init,current) => {
+            !init.includes(current) && init.push(current);
+            return init;
+         },[]);
