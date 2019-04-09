@@ -1,0 +1,22 @@
+2、多维数组展开
+（1）基础递归
+        var newArr = [];
+         function flatten(arr){
+           arr.forEach(item => {
+             if(Array.isArray(item)){
+               flatten(item);
+             } else{
+               newArr.push(item)
+             }
+           });
+           return newArr
+         }
+         var testArr = [1,[2,3],[4,[5,6]]];
+
+         flatten(testArr);   // [1,2,3,4,5,6]
+（2）使用concat方法
+         function flatten(arr){
+           return arr.reduce((newArray,item) => {
+             return newArray.concat(Array.isArray(item) ? flatten(item) : item);
+           });
+         }
