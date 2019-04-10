@@ -18,5 +18,16 @@
          function flatten(arr){
            return arr.reduce((newArray,item) => {
              return newArray.concat(Array.isArray(item) ? flatten(item) : item);
-           });
+           },[]);
          }
+         var testArr = [1,[2,3],[4,[5,6]]];
+
+         flatten(testArr);   // [1,2,3,4,5,6]
+（3）使用ES6展开符
+         function deepFlatten(arr){
+           flatten = (arr) => [].concat(...arr);
+           return flatten((arr.map(x => Array.isArray(x) ? deepFlatten(x) : x)));
+         }
+         var testArr = [1,[2,3],[4,[5,6]]];
+
+         flatten(testArr);   // [1,2,3,4,5,6]
