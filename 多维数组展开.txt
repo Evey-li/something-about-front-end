@@ -30,4 +30,4 @@
          }
          var testArr = [1,[2,3],[4,[5,6]]];
 
-         flatten(testArr);   // [1,2,3,4,5,6]
+         deepFlatten(testArr);   // [1,2,3,4,5,6]
