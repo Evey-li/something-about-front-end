@@ -1,0 +1,1 @@
+1、span:nth-child(0)    不会返回任何元素，参数从1开始；span:nth-child(an+b)  n是计数器，从0开始。
