@@ -1,2 +1,17 @@
 1、i++与++i的区别：i++返回原来的值，++i返回加1后的值
       例如：i = 3，执行i++后，i = 4，i++ = 3；执行++i后，i = 4，++i = 4;
+2、如果对象属性名字不是合法的javascript标识符，它必须用""包裹。属性的名字不合法，那么便不能用.访问属性值，
+     而是通过类数组标记("[]")访问和赋值。
+     var car = { manyCars: "Jeep", 7: "Mazda" };
+     console.log(car.manyCars); // Jeep
+     console.log(car[7]); // Mazda
+     console.log(car.7); //报错: Uncaught SyntaxError: Unexpected number
+
+     var unusualPropertyNames = {
+           "": "An empty string",
+           "!": "Bang!"
+      }
+      console.log(unusualPropertyNames."");   // 语法错误: Unexpected string
+      console.log(unusualPropertyNames[""]);  // An empty string
+      console.log(unusualPropertyNames.!);    // 语法错误: Unexpected token !
+      console.log(unusualPropertyNames["!"]); // Bang!
