@@ -20,3 +20,5 @@
       var b = new Boolean(false);
        if(b);//结果视为真
        if(b == true);//结果视为假
+4、keyup事件并不会跳过keydown事件单独先执行。键盘事件执行顺序：keydown--->keypress--->keyup
+     简书键盘事件详解：https://www.jianshu.com/p/8f839f558319
