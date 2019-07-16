@@ -14,3 +14,6 @@
             !init.includes(current) && init.push(current);
             return init;
          },[]);
+（4）将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组：
+        var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+        Array.from(new Set(arr.flat(Infinity))).sort((a,b)=>{ return a-b})
