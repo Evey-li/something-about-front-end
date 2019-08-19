@@ -37,3 +37,6 @@
      
      表达式1 && 表达式2 && 表达式3...&& 表达式n，如果表达式1的运算结果为false，则整个表达式的结果为false，
      同时不会再对后面的表达式2、表达式3到表达式n进行运算判断。如果表达式1的运算结果为true，则根据表达式2的运算结果继续判断。
+8、Array.prototype.map(callback)的callback函数只在有值的索引上被调用，未被赋值或者使用delete删除的索引则不会被调用。
+      let a = new Array(3);   a.map(function(c,i){return i;});  //[empty x 3]
+      let b = Array.apply(null, { length: 3 });   b.map(function(c,i){return i});   //[0,1,2]
